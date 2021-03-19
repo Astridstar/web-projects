@@ -7,17 +7,25 @@ import SidePanel from './components/SidePanel'
 
 import CssBaseline from '@material-ui/core/CssBaseline'
 
-function App() {
+import { useStyles } from './styles/generalStyle'
+
+import MiniDrawer from './MiniDrawer'
+
+function App1() {
+  const styles = useStyles()
   return (
     <Router>
-      <div>
+      <div className={styles.root}>
         <CssBaseline />
         <Header></Header>
-        <Footer></Footer>
         <SidePanel></SidePanel>
       </div>
     </Router>
   )
+}
+
+function App() {
+  return <MiniDrawer />
 }
 
 export default App

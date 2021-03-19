@@ -14,14 +14,13 @@ import {
   ListItemText,
 } from '@material-ui/core'
 
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeftIcon'
-import ChevronRightIcon from '@material-ui/icons/ChevronRightIcon'
-import InboxIcon from '@material-ui/icons/InboxIcon'
-import MailIcon from '@material-ui/icons/MailIcon'
+import InboxIcon from '@material-ui/icons/MoveToInbox'
+import MailIcon from '@material-ui/icons/Mail'
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
+import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 
 const SidePanel = () => {
   const styles = useStyles()
-
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
 

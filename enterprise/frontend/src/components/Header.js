@@ -2,19 +2,19 @@ import React from 'react'
 import clsx from 'clsx'
 
 import { useStyles } from '../styles/generalStyle'
-import { useTheme } from '@material-ui/core/styles'
 
 import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core'
 
-import MenuIcon from '@material-ui/icons/MenuIcon'
+import MenuIcon from '@material-ui/icons/Menu'
 
 const Header = () => {
   const styles = useStyles()
-  const theme = useTheme()
-  const [open, setOpen] = React.useState(false)
 
+  //const [open, setOpen] = React.useState(true)
+
+  const open = false
   const handleDrawerOpen = () => {
-    setOpen(true)
+    //setOpen(true)
   }
 
   return (
