@@ -1,15 +1,13 @@
 import React from 'react'
 import clsx from 'clsx'
 
-import { useStyles } from '../styles/generalStyle'
-
 import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core'
 
 import MenuIcon from '@material-ui/icons/Menu'
+import { useStyles } from '../styles/generalStyle'
 
-const Header = () => {
-  const styles = useStyles()
-
+const Header = (theme) => {
+  const styles = useStyles(theme)
   //const [open, setOpen] = React.useState(true)
 
   const open = false

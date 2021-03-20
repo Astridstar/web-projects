@@ -7,25 +7,41 @@ import SidePanel from './components/SidePanel'
 
 import CssBaseline from '@material-ui/core/CssBaseline'
 
-import { useStyles } from './styles/generalStyle'
-
 import MiniDrawer from './MiniDrawer'
 
-function App1() {
-  const styles = useStyles()
+import Paperbase from './Paperbase/Paperbase'
+import AppTheme from './Paperbase/Paperbase'
+import { createMuiTheme } from '@material-ui/core'
+import { useStyles } from './styles/generalStyle'
+
+const theme = createMuiTheme()
+
+function App() {
+  const styles = useStyles(theme)
   return (
     <Router>
       <div className={styles.root}>
         <CssBaseline />
-        <Header></Header>
-        <SidePanel></SidePanel>
+        <Header theme={theme}></Header>
+        <SidePanel theme={theme}></SidePanel>
       </div>
     </Router>
   )
 }
 
-function App() {
+function App2() {
   return <MiniDrawer />
 }
 
+function App3() {
+  return (
+    <AppTheme
+      title='Paperbase theme - Material-UI'
+      description={`A page that mimics Firebase.
+    This item includes theming using the theme provider component.`}
+    >
+      <Paperbase />
+    </AppTheme>
+  )
+}
 export default App
