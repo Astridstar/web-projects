@@ -20,14 +20,13 @@ export const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
-  menuButton: {
-    marginRight: 36,
-  },
+
+  /* Drawer related functions */
   hide: {
     display: 'none',
   },
   drawer: {
-    width: DRAWER_WIDTH,
+    //width: DRAWER_WIDTH,
     flexShrink: 0,
     whiteSpace: 'nowrap',
   },

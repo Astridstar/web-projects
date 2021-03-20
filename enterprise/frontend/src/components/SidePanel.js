@@ -19,7 +19,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import { useStyles } from '../styles/generalStyle'
 
 const SidePanel = (theme) => {
-  const classes = useStyles(theme)
+  const styles = useStyles(theme)
   const open = false
 
   const handleDrawerClose = () => {
@@ -29,18 +29,40 @@ const SidePanel = (theme) => {
   return (
     <Drawer
       variant='permanent'
-      className={clsx(classes.drawer, {
-        [classes.drawerOpen]: open,
-        [classes.drawerClose]: !open,
+      className={clsx(styles.drawer, {
+        [styles.drawerOpen]: open,
+        [styles.drawerClose]: !open,
       })}
       classes={{
         paper: clsx({
-          [classes.drawerOpen]: open,
-          [classes.drawerClose]: !open,
+          [styles.drawerOpen]: open,
+          [styles.drawerClose]: !open,
         }),
       }}
+      open={open}
     >
-      <div className={classes.toolbar}>
+      <div className={styles.toolbar}>
+        <IconButton onClick={handleDrawerClose}>
+          {theme.direction === 'rtl' ? (
+            <ChevronRightIcon />
+          ) : (
+            <ChevronLeftIcon />
+          )}
+        </IconButton>
+      </div>
+      <Divider />
+      <List>
+        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      {/*
+      <div className={styles.toolbar}>
         <IconButton onClick={handleDrawerClose}>
           {theme.direction === 'rtl' ? (
             <ChevronRightIcon />
@@ -71,6 +93,7 @@ const SidePanel = (theme) => {
           </ListItem>
         ))}
       </List>
+        */}
     </Drawer>
   )
 }
